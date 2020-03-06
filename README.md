@@ -22,9 +22,9 @@ $ python3 install.py
 For convenience's sake I've included a few other parts of my own personal setup.
 
 ```
-$ sudo apt install build-essential cmake python3-dev
+$ sudo apt install build-essential cmake python3-dev python3-pip curl
 $ sudo apt install zsh
-$ sudo pip3 instal virtualenvwrapper
+$ pip3 install --user virtualenv virtualenvwrapper
 $ chsh -s $(which zsh)
 $ curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 ```
