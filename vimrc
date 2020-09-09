@@ -19,6 +19,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,10 +46,11 @@ au BufNewFile,BufRead *.html
     \ set shiftwidth=4 |
     \ set autoindent |
 
-au BufNewFile,BufRead *.js
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
+au BufNewFile,BufRead *.js,*.json
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
     \ set autoindent |
 
 " Return to last edit position when opening files (You want this!)
