@@ -17,6 +17,14 @@ $ cd bundle/YouCompleteMe
 $ python3 install.py
 ```
 
+## Updating an existing setup
+
+If this repo has been pulled and installed before:
+
+```
+$ git submodule update --remote
+```
+
 ## Other personal configurations
 
 For convenience's sake I've included a few other parts of my own personal setup.
