@@ -19,7 +19,9 @@ Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -33,6 +35,12 @@ set backspace=indent,eol,start
 set hlsearch
 set scrolloff=5
 
+" Default indentation is to never use tabs with a size of 4 spaces
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
@@ -40,17 +48,16 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
 
-au BufNewFile,BufRead *.html
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set autoindent |
-
-au BufNewFile,BufRead *.js,*.json
-    \ set tabstop=2 |
+au BufNewFile,BufRead *.html,*.js,*.ts,*.tsx
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set expandtab |
+    \ set autoindent |
+
+au BufNewFile,BufRead *.yaml
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
     \ set autoindent |
 
 " Return to last edit position when opening files (You want this!)
@@ -67,3 +74,14 @@ set completeopt-=preview
 " highlight BadWhitespace ctermfg=16 ctermbg=253 guifg=#000000 guibg=#F8F8F0
 
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['flake8']

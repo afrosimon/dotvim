@@ -1,0 +1,7 @@
+[user]
+	email = chenard.simon@gmail.com
+	name = Simon Chénard
+[alias]
+	s = status
+	co = checkout
+	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
