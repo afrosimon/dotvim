@@ -98,7 +98,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-setxkbmap -option caps:swapescape
+# 2021-11-18: Gnome's latest upgrade broke setxkbmap?
+# setxkbmap -option caps:swapescape
+# Use this instead (commented since we only need to run it once):
+# gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
 
 # instead of a system wide installation
 # export PATH=$HOME/.local/bin:$PATH

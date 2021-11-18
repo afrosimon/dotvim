@@ -8,6 +8,7 @@ $ cd .vim
 $ git submodule update --init --recursive
 $ mv ../.vimrc ../.vimrc-backup
 $ echo "runtime vimrc" > ../.vimrc
+$ gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
 ```
 
 From this point there is one additional installation step for the YouCompleteMe plugin.
