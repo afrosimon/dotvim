@@ -18,6 +18,9 @@ $ cd bundle/YouCompleteMe
 $ python3 install.py
 ```
 
+NOTE : if the YCM install fails, switch to the master branch and pull. I mean I
+was in detached head state on the same commit but I guess it's not the same..
+
 ## Updating an existing setup
 
 If this repo has been pulled and installed before:

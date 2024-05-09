@@ -41,14 +41,14 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-au BufNewFile,BufRead *.py
+au BufNewFile,BufRead *.py,*.html,*.css
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set expandtab |
     \ set autoindent |
 
-au BufNewFile,BufRead *.html,*.js,*.ts,*.tsx
+au BufNewFile,BufRead *.js,*.ts,*.tsx
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set expandtab |
@@ -58,6 +58,12 @@ au BufNewFile,BufRead *.yaml
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+    \ set autoindent |
+
+au BufNewFile,BufRead *.php
+    \ set tabstop=4 |
+    \ set shiftwidth=4 |
+    \ set noexpandtab |
     \ set autoindent |
 
 " Return to last edit position when opening files (You want this!)
@@ -79,9 +85,14 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Trying to disable to immensely annoying SQL autocomplete
+" let g:omni_sql_default_compl_type = 'syntax'
+let g:omni_sql_no_default_maps = 1
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_mode_map = { 'passive_filetypes': ['html', 'php'] }
